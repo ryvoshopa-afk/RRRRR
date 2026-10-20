@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #e2e8f0;
+    color: #000000;
+    font-family: "Noto Naskh Arabic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Tahoma, sans-serif;
+  }
+}
+
+/* Document specific styling */
+.ajeer-document {
+  width: 210mm;
+  min-height: 297mm;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 12mm 14mm;
+  position: relative;
+  direction: rtl;
+  text-align: right;
+  line-height: 1.45;
+  font-size: 11.5px;
+}
+
+/* Exact borders and tables */
+.ajeer-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #737373;
+  margin-top: 5px;
+  margin-bottom: 9px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.ajeer-table th,
+.ajeer-table td {
+  border: 1px solid #737373;
+  padding: 5px 8px;
+  text-align: right;
+  color: #000000;
+  vertical-align: middle;
+}
+
+.ajeer-table .section-header {
+  background-color: #f0f0f0 !important;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 8px;
+  text-align: right;
+  border: 1px solid #737373;
+  color: #000000;
+}
+
+.ajeer-table .cell-label {
+  background-color: #f7f7f7 !important;
+  font-weight: 600;
+  color: #111111;
+  width: 28%;
+}
+
+.ajeer-table .cell-value {
+  color: #000000;
+  font-weight: 500;
+}
+
+/* Print CSS */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  .ajeer-document {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 10mm 12mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    overflow: hidden !important;
+    page-break-after: avoid !important;
+  }
+}
