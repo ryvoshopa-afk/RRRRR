@@ -6,3 +6,9 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Runtime database (contains admin credentials hash, sessions and worker data)
+data/
+
+# Local verification screenshots and reports
+artifacts/
